@@ -10,11 +10,16 @@ class AuthActivity : DaggerAppCompatActivity() {
     @Inject
     lateinit var injectedString: String
 
+    @JvmField
+    @Inject
+    var isAppNull: Boolean? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
 
         Log.d(TAG, "onCreate: $injectedString")
+        Log.d(TAG, "onCreate: is app null? $isAppNull")
     }
 
     companion object {
